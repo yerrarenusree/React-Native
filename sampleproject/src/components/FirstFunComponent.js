@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, View, Button } from 'react-native';
+import { ScrollView, Text, View, Button, TextInput } from 'react-native';
 
 const FirstFunComponent = (props) => {
     const [isHungry, setIsHungry] = useState(true);
+    const [text, setText] = useState('');
   return (
     <ScrollView>
         <View>
@@ -18,6 +19,15 @@ const FirstFunComponent = (props) => {
             disabled={!isHungry}
             title={isHungry ? "Pour me some milk, please!" : "Thank you!"}
         />
+        <TextInput
+        style={{height: 40}}
+        placeholder="Type here to translate!"
+        onChangeText={text => setText(text)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>
+        {text.split(' ').map((word) => word && '🍕').join(' ')}
+      </Text>
     </ScrollView>
   );
 }
