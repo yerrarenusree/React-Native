@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, Text, TextInput, View } from 'react-native';
+import styles from './App.style';
 // import FirstFunComponent from './src/components/FirstFunComponent';
 import SectionListBasic from './src/components/SectionList/SectionListBasic';
 // import FirstClassComponent from './src/components/FirstClassComponent';
@@ -8,8 +9,8 @@ import SectionListBasic from './src/components/SectionList/SectionListBasic';
 const App = () => {
   const name = "React Native";
   return (
-    <ScrollView>
-    <View style={{paddingTop: 60, paddingLeft: 20, paddingRight: 20}}>
+    <ScrollView style={styles.container}>
+    <View style={{ paddingTop: Platform.OS === 'ios' ? 60 : 20, paddingLeft: 20, paddingRight: 20}}>
       <Text
         style={{
          fontSize: 30, fontWeight: 'bold', justifyContent: 'center', alignSelf: 'center',}}
