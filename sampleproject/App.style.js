@@ -4,15 +4,19 @@ export default StyleSheet.create({
   container: {
     ...Platform.select({
       ios: {
-        backgroundColor: 'red'
+        backgroundColor: 'white'
       },
       android: {
         backgroundColor: 'green'
       },
       default: {
-        // other platforms, web for example
         backgroundColor: 'blue'
       }
     })
+  },
+  items: {
+    paddingTop: Platform.OS === 'ios' ? 60 : 20,
+    paddingLeft: 20,
+    paddingRight: 20
   }
 });

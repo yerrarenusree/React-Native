@@ -10,7 +10,7 @@ const App = () => {
   const name = "React Native";
   return (
     <ScrollView style={styles.container}>
-    <View style={{ paddingTop: Platform.OS === 'ios' ? 60 : 20, paddingLeft: 20, paddingRight: 20}}>
+    <View style={styles.items}>
       <Text
         style={{
          fontSize: 30, fontWeight: 'bold', justifyContent: 'center', alignSelf: 'center',}}
